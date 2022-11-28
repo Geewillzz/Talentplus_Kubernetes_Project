@@ -1,0 +1,15 @@
+# Default values for talentplus.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: docker.io/geewillzz/backend
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "1.0.4"
+service:
+  type: ClusterIP
+  port: 80
+  targetport: 80
