@@ -24,23 +24,29 @@ Firstly, you need to tag the image to your Docker hub account
 docker image tag backend:1.0.4 geewillzz/backend:1.0.4
 docker image tag frontend:1.0.4 geewillzz/frontend:1.0.4
 
-Now, push both
+Now, push both images
+
 docker image push geewillzz/backend:1.0.4
+
 docker image push geewillzz/frontend:1.0.4
 
 ==========================================================================
 
 ## 3. Create a custom Helm chart
 Have Helm installed in your Vs Code
+
 helm version --short
 
-Then create a custom Helm chart
+### Then create a custom Helm chart
+
 helm create talentplus
 
-Vaidate the manifest file
+### Vaidate the manifest file
+
 helm template talentplus/
 
 It is important to deploy ingress-nginx on your Kubernetes cluster
+
 helm install ingress-nginx ingress-nginx/ingress-nginx
 
 ==========================================================================
@@ -50,6 +56,7 @@ helm install ingress-nginx ingress-nginx/ingress-nginx
 eksctl create cluster --name talentplus --node-type t2.micro --nodes 4 --nodes-min 4 --nodes-max 5 --region us-east-1 --zones us-east-1a,us-east-1b
 
 It is important to deploy ingress-nginx on your Kubernetes cluster. To do this, run the command below
+
 helm install ingress-nginx ingress-nginx/ingress-nginx
 
 ==========================================================================
